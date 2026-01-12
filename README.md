@@ -4,10 +4,10 @@ A full-stack booking system for the Microlight Flying Club, built with React (fr
 
 ## Features
 - User registration and login
-- Role-based access (Barber/Admin, User)
-- Book appointments for flights
+- Role-based access (Admin, User)
+- Book appointments for joyride
 - View and manage bookings
-- Barber dashboard for managing availability and appointments
+- Admin dashboard for managing availability and appointments
 - Responsive, modern UI with dark mode support
 
 ## Tech Stack
