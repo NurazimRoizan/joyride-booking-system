@@ -32,16 +32,17 @@ const Login = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-[var(--color-primary-light)]/10 via-white to-[var(--color-primary-dark)]/10 dark:from-black dark:via-gray-900 dark:to-gray-800 p-4">
-      <div className="absolute top-4 right-4">
+    <div className="relative min-h-screen w-full flex items-center justify-center overflow-hidden">
+      <div className="fixed inset-0 z-0 bg-gradient-to-br from-[var(--color-primary-light)]/10 via-white to-[var(--color-primary-dark)]/10 dark:from-black dark:via-gray-900 dark:to-gray-800" />
+      <div className="fixed -top-10 -left-10 w-60 h-60 bg-[var(--color-primary-light)]/20 dark:bg-[var(--color-primary-dark)]/20 rounded-full blur-3xl z-0 animate-pulse" />
+      <div className="fixed -bottom-10 -right-10 w-60 h-60 bg-[var(--color-primary-dark)]/20 dark:bg-[var(--color-primary-light)]/20 rounded-full blur-3xl z-0 animate-pulse" />
+
+      <div className="absolute top-4 right-4 z-20">
         <ThemeToggle />
       </div>
-      <div className="w-full max-w-lg relative">
-        {/* Decorative blurred background */}
-        <div className="absolute -top-10 -left-10 w-60 h-60 bg-[var(--color-primary-light)]/20 dark:bg-[var(--color-primary-dark)]/20 rounded-full blur-3xl z-0 animate-pulse" />
-        <div className="absolute -bottom-10 -right-10 w-60 h-60 bg-[var(--color-primary-dark)]/20 dark:bg-[var(--color-primary-light)]/20 rounded-full blur-3xl z-0 animate-pulse" />
 
-        <div className="relative z-10 bg-white/90 dark:bg-gray-900/90 p-10 rounded-3xl border border-gray-200 dark:border-gray-800 shadow-2xl backdrop-blur-xl">
+      <div className="w-full max-w-lg relative z-10">
+        <div className="relative bg-white/90 dark:bg-gray-900/90 p-10 rounded-3xl border border-gray-200 dark:border-gray-800 shadow-2xl backdrop-blur-xl">
           <div className="flex flex-col items-center mb-8">
             <div className="bg-[var(--color-primary-light)]/20 dark:bg-[var(--color-primary-dark)]/20 rounded-full p-4 mb-2 shadow-lg">
               <Plane className="text-[var(--color-primary-light)] dark:text-[var(--color-primary-dark)]" size={48} />
