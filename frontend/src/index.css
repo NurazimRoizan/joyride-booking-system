@@ -1,0 +1,15 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary-light: #FF8C00;
+  --color-primary-dark: #00FFFF;
+  --color-accent: #6366f1;
+}
+
+@variant dark (&:where(.dark, .dark *));
+
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
