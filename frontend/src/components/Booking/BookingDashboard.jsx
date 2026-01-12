@@ -87,13 +87,25 @@ const BookingDashboard = () => {
             <label className="block text-lg font-bold mb-2 text-gray-900 dark:text-white tracking-wide">
               Select Date
             </label>
-            <input
-              type="date"
-              value={selectedDate}
-              min={new Date().toISOString().split('T')[0]}
-              onChange={(e) => setSelectedDate(e.target.value)}
-              className="px-5 py-3 border border-gray-300 dark:border-gray-700 rounded-xl bg-white/80 dark:bg-black/70 text-gray-900 dark:text-white text-lg focus:outline-none focus:ring-2 focus:ring-[var(--color-primary-light)] dark:focus:ring-[var(--color-primary-dark)] shadow-sm transition"
-            />
+            <div
+              className="flex items-center gap-3 px-5 py-3 border border-gray-300 dark:border-gray-700 rounded-xl bg-white/80 dark:bg-black/70 text-gray-900 dark:text-white text-lg shadow-sm transition cursor-pointer hover:border-[var(--color-primary-light)] dark:hover:border-[var(--color-primary-dark)] hover:bg-[var(--color-primary-light)]/10 dark:hover:bg-[var(--color-primary-dark)]/10"
+              onClick={() => document.getElementById('date-picker').showPicker && document.getElementById('date-picker').showPicker()}
+              tabIndex={0}
+              role="button"
+              onKeyDown={e => (e.key === 'Enter' || e.key === ' ') && document.getElementById('date-picker').showPicker && document.getElementById('date-picker').showPicker()}
+            >
+              <Calendar className="text-[var(--color-primary-light)] dark:text-[var(--color-primary-dark)]" size={28} />
+              <span className="flex-1 select-none">{new Date(selectedDate).toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' })}</span>
+              <input
+                id="date-picker"
+                type="date"
+                value={selectedDate}
+                min={new Date().toISOString().split('T')[0]}
+                onChange={(e) => setSelectedDate(e.target.value)}
+                className="absolute opacity-0 pointer-events-none w-0 h-0"
+                tabIndex={-1}
+              />
+            </div>
           </div>
 
           {loading ? (
